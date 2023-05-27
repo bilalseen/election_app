@@ -15,7 +15,7 @@ export default function UserCard(props) {
                     <Text style={{fontSize: 20}}>-</Text>
                 </TouchableOpacity>
                 </View>
-                <Text style={styles.number}>{props.number}</Text>
+                <Text style={styles.count}>{props.count}</Text>
             </View>
         </View>
     )

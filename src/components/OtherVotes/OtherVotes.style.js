@@ -2,22 +2,19 @@ import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
   container: {
-    maxWidth: 220,
+    width: 200,
     margin: 5,
-    marginTop: 20,
+    marginTop: 30,
     borderRadius: 10,
-  },
-  image: {
-    width: 170,
-    height: 170,
-    resizeMode: "contain",
-    borderRadius: 10,
-    margin: 10,
+},
+  header: {
+      textAlign: "center",
+      fontSize: 25,
   },
   box_container: {
     flexDirection: "row",
     justifyContent: "space-around",
-    marginVertical: 20
+    marginVertical: 20,
   },
   increaseButton: {
     backgroundColor: "green",
@@ -35,6 +32,6 @@ export default StyleSheet.create({
     textAlign: "center",
     marginVertical: 10,
     fontSize: 30,
-    fontWeight: 500,
-  }
+    fontWeight: 500
+  },
 });
