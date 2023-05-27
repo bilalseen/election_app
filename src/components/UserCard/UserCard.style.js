@@ -20,13 +20,13 @@ export default StyleSheet.create({
     marginVertical: 20
   },
   increaseButton: {
-    backgroundColor: "green",
+    backgroundColor: "#59CE8F",
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 10,
   },
   decreaseButton: {
-    backgroundColor: "red",
+    backgroundColor: "#FF1E00",
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 10,
