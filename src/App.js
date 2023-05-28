@@ -20,8 +20,10 @@ export default function App() {
   }
 
   function decreaseErdogan() {
-    setVoteErdogan(voteErdogan - 1);
-    setTotalVote(totalVote - 1);
+    if (voteErdogan > 0) {
+      setVoteErdogan(voteErdogan - 1);
+      setTotalVote(totalVote - 1);
+    } else Alert.alert("Negatif oy olamaz!!!", "Oy sayımına dikkat ediniz.");
   }
 
   function increaseKemal() {
@@ -29,8 +31,10 @@ export default function App() {
     setTotalVote(totalVote + 1);
   }
   function decreaseKemal() {
-    setVoteKemal(voteKemal - 1);
-    setTotalVote(totalVote - 1);
+    if (voteKemal > 0) {
+      setVoteKemal(voteKemal - 1);
+      setTotalVote(totalVote - 1);
+    } else Alert.alert("Negatif oy olamaz!!!", "Oy sayımına dikkat ediniz.");
   }
 
   function increaseEmpty() {
@@ -38,8 +42,10 @@ export default function App() {
     setTotalVote(totalVote + 1);
   }
   function decreaseEmpty() {
-    setVoteEmpty(voteEmpty - 1);
-    setTotalVote(totalVote - 1);
+    if (voteEmpty > 0) {
+      setVoteEmpty(voteEmpty - 1);
+      setTotalVote(totalVote - 1);
+    } else Alert.alert("Negatif oy olamaz!!!", "Oy sayımına dikkat ediniz.");
   }
 
   function increaseInvalid() {
@@ -47,28 +53,33 @@ export default function App() {
     setTotalVote(totalVote + 1);
   }
   function decreaseInvalid() {
-    setVoteInvalid(voteInvalid - 1);
-    setTotalVote(totalVote - 1);
+    if (voteInvalid > 0) {
+      setVoteInvalid(voteInvalid - 1);
+      setTotalVote(totalVote - 1);
+    } else Alert.alert("Negatif oy olamaz!!!", "Oy sayımına dikkat ediniz.");
   }
 
-  const clearVotes = () =>
-    Alert.alert("Oylar siliniyor!!!", "Oylarınız silinecek emin misiniz?", [
-      {
-        text: "Hayır",
-        onPress: () => console.log("Cancel Pressed"),
-        style: "cancel",
-      },
-      {
-        text: "Evet",
-        onPress: () => {
-          setVoteErdogan(0);
-          setVoteKemal(0);
-          setVoteInvalid(0);
-          setVoteEmpty(0);
-          setTotalVote(0);
+  const clearVotes = () => {
+    if (totalVote > 0) {
+      Alert.alert("Oylar siliniyor!!!", "Oylarınız silinecek emin misiniz?", [
+        {
+          text: "Hayır",
+          onPress: () => console.log("Cancel Pressed"),
+          style: "cancel",
         },
-      },
-    ]);
+        {
+          text: "Evet",
+          onPress: () => {
+            setVoteErdogan(0);
+            setVoteKemal(0);
+            setVoteInvalid(0);
+            setVoteEmpty(0);
+            setTotalVote(0);
+          },
+        },
+      ]);
+    }else Alert.alert("Oy sayımı başlamadı", "Oy sayımı başlamadan oyları silemezsiniz")
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -110,7 +121,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 100,
+    paddingTop: 70,
     alignItems: "center",
     backgroundColor: "#E8F9FD",
   },
